@@ -3,10 +3,10 @@
 </script>
 
 <svelte:head>
-	<title>Colbe</title>
+	<title>Colbe | SaaS Marketing</title>
 	<meta
 		name="description"
-		content="Colbe - Platform"
+		content="Colbe is a SaaS landing page for product-led teams."
 	/>
 </svelte:head>
 
