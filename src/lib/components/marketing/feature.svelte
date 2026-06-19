@@ -1,61 +1,39 @@
 <script lang="ts">
-	import { Megaphone, Bell, Trophy } from '@lucide/svelte';
+	import { Megaphone, Trophy, Bell, Smartphone } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 
-	const features = [
-		{
-			icon: Megaphone,
-			title: 'Base Channels',
-			copy: 'Subscribe to channels that matter — school announcements, clubs, topics. All updates in one feed.'
-		},
-		{
-			icon: Bell,
-			title: 'Live Updates',
-			copy: 'Never miss a post. Channel owners broadcast in real time and your feed stays fresh automatically.'
-		},
-		{
-			icon: Trophy,
-			title: 'Leaderboard',
-			copy: 'Earn points for staying active. React, subscribe, and show up daily to climb the school rankings.'
-		}
-	];
-
-	const highlights = [
-		'WhatsApp-style channel browsing',
-		'Points & streak system',
-		'Desktop dashboard + mobile app feel'
+	const pills = [
+		{ icon: Megaphone, label: 'Base Channels' },
+		{ icon: Trophy, label: 'Leaderboard' },
+		{ icon: Bell, label: 'Live Updates' },
+		{ icon: Smartphone, label: 'Mobile-first' }
 	];
 </script>
 
-<section id="features" class="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-	<div class="mx-auto max-w-3xl text-center">
-		<div class="badge badge-neutral badge-outline">Features</div>
-		<h2 class="mt-4 text-3xl font-black tracking-tight lg:text-5xl">
-			Everything your school community needs.
-		</h2>
-		<p class="mt-4 text-base leading-7 text-base-content/70 lg:text-lg">
-			Colbe is not just another social app. Built around channels, updates, and community engagement — your way.
-		</p>
+<section class="mx-auto max-w-7xl px-4 py-24 lg:px-8 lg:py-36 text-center">
+	<div class="badge badge-outline badge-primary mb-6 gap-2 px-4 py-3 text-xs font-medium tracking-wide">
+		Now in beta
 	</div>
 
-	<div class="mt-12 grid gap-6 lg:grid-cols-3">
-		{#each features as { icon: Icon, title, copy }}
-			<div class="card bg-base-100 border border-base-300 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
-				<div class="card-body gap-4">
-					<div class="bg-primary/10 text-primary w-fit rounded-xl p-3">
-						<Icon size={22} />
-					</div>
-					<h3 class="card-title text-xl">{title}</h3>
-					<p class="text-base-content/70 leading-7">{copy}</p>
-				</div>
-			</div>
-		{/each}
+	<h1 class="text-4xl font-black tracking-tight lg:text-6xl">
+		Your school. Your feed.<br />
+		<span class="text-primary">Stay in the loop.</span>
+	</h1>
+
+	<p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-base-content/60">
+		Colbe brings channels, updates, and your school community into one clean social platform — no noise, just what matters.
+	</p>
+
+	<div class="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+		<Button href="/register" size="lg" class="px-8">Join now</Button>
+		<Button href="#features" variant="ghost" size="lg" class="px-8">See how it works</Button>
 	</div>
 
-	<div class="mt-6 grid gap-4 rounded-3xl bg-base-200/70 p-6 lg:grid-cols-3 lg:p-8">
-		{#each highlights as item}
-			<div class="flex items-center gap-3 rounded-2xl bg-base-100 p-4 shadow-sm">
-				<div class="bg-primary size-3 rounded-full"></div>
-				<p class="font-medium">{item}</p>
+	<div class="mt-16 flex flex-wrap justify-center gap-4">
+		{#each pills as { icon: Icon, label }}
+			<div class="flex items-center gap-2 rounded-full border border-base-300 bg-base-100 px-4 py-2 text-sm text-base-content/60">
+				<Icon size={15} />
+				{label}
 			</div>
 		{/each}
 	</div>

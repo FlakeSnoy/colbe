@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Megaphone, Trophy, Bell, Smartphone } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	const pills = [
 		{ icon: Megaphone, label: 'Base Channels' },
@@ -24,8 +25,8 @@
 	</p>
 
 	<div class="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-		<a href="/register" class="btn btn-primary btn-lg px-8">Join now</a>
-		<a href="#features" class="btn btn-ghost btn-lg px-8">See how it works</a>
+		<Button href="/register" size="lg" class="px-8">Join now</Button>
+		<Button href="#features" variant="ghost" size="lg" class="px-8">See how it works</Button>
 	</div>
 
 	<div class="mt-16 flex flex-wrap justify-center gap-4">
