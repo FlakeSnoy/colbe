@@ -1,4 +1,10 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: "light --default, dark --prefersdark";
+}
 
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-content: #ffffff;
+}
