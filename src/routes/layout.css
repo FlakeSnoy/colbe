@@ -1,10 +1,30 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin "daisyui" {
-  themes: "dark --default, light";
+  themes: "light --default, dark --prefersdark";
 }
 
 @theme {
   --color-primary: #2563eb;
-  --color-primary-content: #71717a;
+  --color-primary-content: #ffffff;
+  --color-secondary: #0f172a;
+  --color-secondary-content: #f8fafc;
+  --color-neutral: #111827;
+  --color-neutral-content: #f9fafb;
+  --color-base-100: #f8fafc;
+  --color-base-200: #e2e8f0;
+  --color-base-300: #cbd5e1;
+  --color-base-content: #0f172a;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-base-100 text-base-content antialiased;
+  background-image:
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(226, 232, 240, 1) 100%);
 }
