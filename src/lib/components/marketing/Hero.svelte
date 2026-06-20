@@ -23,7 +23,6 @@
 		<div class="flex items-center gap-3 mb-10">
 			<img src="/favicon.svg" alt="Colbe" class="h-8 w-8" />
 			<span class="text-white font-medium text-lg tracking-tight">Colbe</span>
-			<span class="text-neutral-800 text-lg">|</span>
 			<span class="text-neutral-600 text-sm">Chat. Call. Explore.</span>
 		</div>
 
