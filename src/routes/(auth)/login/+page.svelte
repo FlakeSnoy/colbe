@@ -15,7 +15,7 @@
 <div class="min-h-screen bg-neutral-950 flex">
 
 	<!-- Left: form -->
-	<div class="flex flex-1 flex-col justify-center px-10 py-12 md:max-w-[480px]">
+	<div class="flex flex-1 flex-col justify-center px-10 py-12 md:max-w-120
 		<div class="w-full max-w-sm mx-auto">
 
 			<div class="flex items-center gap-2 mb-14">
@@ -88,7 +88,7 @@
 
 	<!-- Right: SVG art panel -->
 	<div class="hidden md:flex flex-1 bg-neutral-900 items-center justify-center relative overflow-hidden">
-		<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1d4ed818_0%,_transparent_70%)]"></div>
+		<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1d4ed818_0%,transparent_70%)]</div>
 		<div class="relative z-10 flex flex-col items-center gap-8 px-12 text-center">
 			<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="140" cy="140" r="110" stroke="#262626" stroke-width="1"/>
