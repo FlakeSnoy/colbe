@@ -5,7 +5,6 @@
 
 <section id="pricing" class="mx-auto max-w-7xl px-4 py-20 lg:px-8">
 	<div class="relative rounded-3xl border border-primary/20 bg-base-200/60 overflow-hidden p-10 lg:p-16">
-		<!-- glow -->
 		<div class="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full bg-primary/15 blur-[100px]"></div>
 
 		<div class="relative z-10 lg:flex lg:items-center lg:justify-between gap-12">

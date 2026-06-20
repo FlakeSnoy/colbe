@@ -11,7 +11,6 @@
 </script>
 
 <section class="relative mx-auto max-w-7xl px-4 py-28 lg:px-8 lg:py-40 text-center overflow-hidden">
-	<!-- subtle blue glow behind heading -->
 	<div class="pointer-events-none absolute inset-0 flex items-center justify-center">
 		<div class="h-105 w-105 rounded-full bg-primary/10 blur-[120px]"></div>
 	</div>

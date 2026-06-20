@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Megaphone, Bell, Trophy, CheckCircle } from '@lucide/svelte';
-	import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '$lib/components/ui/card/index.js';
 
 	const features = [
 		{
@@ -28,7 +27,6 @@
 </script>
 
 <section id="features" class="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-	<!-- eyebrow + heading -->
 	<div class="mb-14">
 		<p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Features</p>
 		<h2 class="text-3xl font-black tracking-tight text-base-content lg:text-5xl max-w-xl">
@@ -39,7 +37,6 @@
 		</p>
 	</div>
 
-	<!-- cards -->
 	<div class="grid gap-px lg:grid-cols-3 rounded-2xl overflow-hidden border border-base-content/10">
 		{#each features as { icon: Icon, title, copy }, i}
 			<div class="bg-base-200/50 p-8 flex flex-col gap-5 hover:bg-base-200 transition-colors duration-200 {i === 1 ? 'border-x border-base-content/10' : ''}">
@@ -54,7 +51,6 @@
 		{/each}
 	</div>
 
-	<!-- highlights -->
 	<div class="mt-4 grid gap-3 lg:grid-cols-3">
 		{#each highlights as item}
 			<div class="flex items-center gap-3 rounded-xl border border-base-content/10 bg-base-200/30 px-5 py-4">
