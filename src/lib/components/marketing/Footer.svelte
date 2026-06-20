@@ -46,8 +46,6 @@
 		<!-- Right: explore CTA -->
 		<div class="flex flex-col items-center md:items-end gap-3">
 			<p class="text-xs font-medium text-neutral-700 tracking-widest uppercase mb-1">Explore</p>
-			<a href="/register" class="text-sm text-neutral-500 hover:text-white transition-colors">Create account</a>
-			<a href="/login" class="text-sm text-neutral-500 hover:text-white transition-colors">Log in</a>
 			<a href="/about" class="text-sm text-neutral-500 hover:text-white transition-colors">About Colbe</a>
 			<a href="/docs" class="text-sm text-neutral-500 hover:text-white transition-colors">Documentation</a>
 		</div>
