@@ -10,4 +10,5 @@
 <Navbar />
 <Hero />
 <Features />
+<Cta />
 <Footer />
