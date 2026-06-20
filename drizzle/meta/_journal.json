@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1781967110884,
+      "tag": "0000_lively_ultimatum",
+      "breakpoints": true
+    }
+  ]
+}
