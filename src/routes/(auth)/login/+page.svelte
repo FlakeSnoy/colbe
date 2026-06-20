@@ -15,7 +15,7 @@
 <div class="min-h-screen bg-neutral-950 flex">
 
 	<!-- Left: form -->
-	<div class="flex flex-1 flex-col justify-center px-10 py-12 md:max-w-120
+	<div class="flex flex-1 flex-col justify-center px-10 py-12 md:max-w-120">
 		<div class="w-full max-w-sm mx-auto">
 
 			<div class="flex items-center gap-2 mb-14">
@@ -28,7 +28,6 @@
 			<h1 class="text-2xl font-semibold text-white tracking-tight mb-1">Welcome back.</h1>
 			<p class="text-sm text-neutral-500 mb-8">Log in to continue where you left off.</p>
 
-			<!-- Identifier tabs -->
 			<Tabs.Root bind:value={tab} class="mb-4">
 				<Tabs.List class="flex items-center gap-1 bg-neutral-900 border border-neutral-800 rounded-xl p-1 w-full">
 					{#each [{ value: 'email', label: 'Email', icon: Mail }, { value: 'phone', label: 'Phone', icon: Phone }, { value: 'username', label: 'Username', icon: User }] as t}
@@ -88,7 +87,7 @@
 
 	<!-- Right: SVG art panel -->
 	<div class="hidden md:flex flex-1 bg-neutral-900 items-center justify-center relative overflow-hidden">
-		<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1d4ed818_0%,transparent_70%)]</div>
+		<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1d4ed818_0%,transparent_70%)]"></div>
 		<div class="relative z-10 flex flex-col items-center gap-8 px-12 text-center">
 			<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="140" cy="140" r="110" stroke="#262626" stroke-width="1"/>
