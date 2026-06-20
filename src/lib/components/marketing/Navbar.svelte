@@ -1,122 +1,69 @@
 <script lang="ts">
-	import { NavigationMenu, DropdownMenu } from 'bits-ui';
-	import { BookOpen, ChevronDown, Info, LogIn, Menu, UserPlus, X } from '@lucide/svelte';
+	import { DropdownMenu } from 'bits-ui';
+	import { ChevronDown, Menu, X } from '@lucide/svelte';
 
 	let mobileOpen = $state(false);
 </script>
 
-<header class="fixed top-0 inset-x-0 z-50">
-	<div class="border-b border-white/6 bg-neutral-950/75 backdrop-blur-xl backdrop-saturate-150">
-		<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+<header class="fixed top-0 inset-x-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-900">
+	<nav class="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
 
-			<!-- Logo -->
-			<a href="/" class="flex items-center gap-2.5 shrink-0">
-				<img src="/favicon.svg" alt="Colbe" class="h-7 w-7" />
-				<span class="text-white font-semibold text-[15px] tracking-[-0.01em]">Colbe</span>
-			</a>
+		<a href="/" class="flex items-center gap-2 shrink-0">
+			<img src="/favicon.svg" alt="Colbe" class="h-6 w-6" />
+			<span class="text-white text-sm font-medium tracking-tight">Colbe</span>
+		</a>
 
-			<!-- Desktop nav — centered -->
-			<NavigationMenu.Root class="hidden md:flex absolute left-1/2 -translate-x-1/2">
-				<NavigationMenu.List class="flex items-center gap-0.5">
-					<NavigationMenu.Item>
-						<NavigationMenu.Link
-							href="/about"
-							class="flex items-center gap-1.5 px-3.5 py-2 text-[13px] text-neutral-400 rounded-full transition-all duration-150 hover:text-white hover:bg-white/[0.07]"
-						>
-							<Info size={13} strokeWidth={1.75} />
-							About
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
-					<NavigationMenu.Item>
-						<NavigationMenu.Link
-							href="/docs"
-							class="flex items-center gap-1.5 px-3.5 py-2 text-[13px] text-neutral-400 rounded-full transition-all duration-150 hover:text-white hover:bg-white/[0.07]"
-						>
-							<BookOpen size={13} strokeWidth={1.75} />
-							Docs
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
-				</NavigationMenu.List>
-			</NavigationMenu.Root>
+		<div class="hidden md:flex items-center gap-8">
+			<a href="/about" class="text-sm text-neutral-500 hover:text-white transition-colors">About</a>
+			<a href="/docs" class="text-sm text-neutral-500 hover:text-white transition-colors">Docs</a>
+		</div>
 
-			<!-- Desktop CTA -->
-			<div class="hidden md:flex items-center gap-2 shrink-0">
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger
-						class="group flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white rounded-full transition-all duration-150 shadow-lg shadow-blue-600/20"
+		<div class="hidden md:flex items-center gap-3">
+			<a href="/login" class="text-sm text-neutral-500 hover:text-white transition-colors">Log in</a>
+			<DropdownMenu.Root>
+				<DropdownMenu.Trigger class="group inline-flex items-center gap-1 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 px-4 py-1.5 rounded-full transition-colors">
+					Get started
+					<ChevronDown size={12} strokeWidth={2} class="transition-transform duration-150 group-data-[state=open]:rotate-180" />
+				</DropdownMenu.Trigger>
+				<DropdownMenu.Content
+					class="z-50 mt-2 w-40 rounded-xl border border-neutral-800 bg-neutral-950 p-1 shadow-xl"
+					sideOffset={6}
+					align="end"
+				>
+					<DropdownMenu.Item
+						class="px-3 py-2 text-sm text-neutral-300 rounded-lg cursor-pointer hover:bg-neutral-800 hover:text-white transition-colors"
+						onclick={() => window.location.href = '/register'}
 					>
-						Get started
-						<ChevronDown
-							size={13}
-							strokeWidth={2}
-							class="transition-transform duration-200 group-data-[state=open]:rotate-180"
-						/>
-					</DropdownMenu.Trigger>
-					<DropdownMenu.Content
-						class="z-50 mt-2 w-48 rounded-2xl border border-white/8 bg-neutral-900/95 backdrop-blur-xl p-1.5 shadow-2xl shadow-black/40"
-						sideOffset={8}
-						align="end"
+						Create account
+					</DropdownMenu.Item>
+					<DropdownMenu.Item
+						class="px-3 py-2 text-sm text-neutral-300 rounded-lg cursor-pointer hover:bg-neutral-800 hover:text-white transition-colors"
+						onclick={() => window.location.href = '/login'}
 					>
-						<DropdownMenu.Item
-							class="flex items-center gap-2.5 px-3 py-2.5 text-[13px] text-neutral-300 rounded-xl cursor-pointer hover:bg-white/[0.07] hover:text-white transition-colors"
-							onclick={() => window.location.href = '/register'}
-						>
-							<span class="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-500/15 text-blue-400">
-								<UserPlus size={12} strokeWidth={2} />
-							</span>
-							Create account
-						</DropdownMenu.Item>
-						<DropdownMenu.Item
-							class="flex items-center gap-2.5 px-3 py-2.5 text-[13px] text-neutral-300 rounded-xl cursor-pointer hover:bg-white/[0.07] hover:text-white transition-colors"
-							onclick={() => window.location.href = '/login'}
-						>
-							<span class="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-500/15 text-neutral-400">
-								<LogIn size={12} strokeWidth={2} />
-							</span>
-							Log in
-						</DropdownMenu.Item>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
-			</div>
+						Log in
+					</DropdownMenu.Item>
+				</DropdownMenu.Content>
+			</DropdownMenu.Root>
+		</div>
 
-			<!-- Mobile hamburger -->
-			<button
-				class="md:hidden flex h-9 w-9 items-center justify-center rounded-full text-neutral-400 hover:text-white hover:bg-white/[0.07] transition-all"
-				onclick={() => mobileOpen = !mobileOpen}
-				aria-label="Toggle menu"
-			>
-				{#if mobileOpen}
-					<X size={18} strokeWidth={1.75} />
-				{:else}
-					<Menu size={18} strokeWidth={1.75} />
-				{/if}
-			</button>
-
-		</nav>
-	</div>
+		<button
+			class="md:hidden text-neutral-500 hover:text-white transition-colors"
+			onclick={() => mobileOpen = !mobileOpen}
+			aria-label="Toggle menu"
+		>
+			{#if mobileOpen}<X size={18} />{:else}<Menu size={18} />{/if}
+		</button>
+	</nav>
 
 	{#if mobileOpen}
-		<div class="md:hidden border-b border-white/6 bg-neutral-950/95 backdrop-blur-xl px-5 py-3 flex flex-col gap-0.5">
-			<a href="/about" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
-				<Info size={14} strokeWidth={1.75} />
-				About
-			</a>
-			<a href="/docs" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
-				<BookOpen size={14} strokeWidth={1.75} />
-				Docs
-			</a>
-			<div class="mt-2 pt-2 border-t border-white/6 flex flex-col gap-1.5">
-				<a href="/register" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-colors">
-					<UserPlus size={14} strokeWidth={1.75} />
-					Create account
-				</a>
-				<a href="/login" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
-					<LogIn size={14} strokeWidth={1.75} />
-					Log in
-				</a>
+		<div class="md:hidden border-t border-neutral-900 bg-neutral-950 px-6 py-4 flex flex-col gap-3">
+			<a href="/about" onclick={() => mobileOpen = false} class="text-sm text-neutral-400 hover:text-white transition-colors">About</a>
+			<a href="/docs" onclick={() => mobileOpen = false} class="text-sm text-neutral-400 hover:text-white transition-colors">Docs</a>
+			<div class="pt-3 border-t border-neutral-900 flex flex-col gap-2">
+				<a href="/login" onclick={() => mobileOpen = false} class="text-sm text-neutral-400 hover:text-white transition-colors">Log in</a>
+				<a href="/register" onclick={() => mobileOpen = false} class="text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-center transition-colors">Create account</a>
 			</div>
 		</div>
 	{/if}
 </header>
-
-<div class="h-16"></div>
+<div class="h-14"></div>
