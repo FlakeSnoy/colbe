@@ -28,12 +28,12 @@
 
 		<p class="text-xs font-medium text-blue-500 tracking-widest uppercase mb-12">Features</p>
 
-		<div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+		<div class="grid md:grid-cols-2 gap-px bg-neutral-900">
 			{#each features as f}
-				<div>
-					<span class="text-xs text-neutral-700 font-mono mb-3 block">{f.label}</span>
-					<h3 class="text-lg font-medium text-white mb-2 tracking-tight">{f.title}</h3>
-					<p class="text-sm text-neutral-500 leading-relaxed">{f.description}</p>
+				<div class="group bg-neutral-950 p-8 transition-colors duration-200 hover:bg-neutral-900 cursor-default">
+					<span class="text-xs text-neutral-700 font-mono mb-4 block">{f.label}</span>
+					<h3 class="text-base font-medium text-white mb-2 tracking-tight group-hover:text-blue-400 transition-colors duration-200">{f.title}</h3>
+					<p class="text-sm text-neutral-600 leading-relaxed group-hover:text-neutral-400 transition-colors duration-200">{f.description}</p>
 				</div>
 			{/each}
 		</div>

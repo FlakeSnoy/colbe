@@ -5,7 +5,7 @@
 	let mobileOpen = $state(false);
 </script>
 
-<header class="fixed top-0 inset-x-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-900">
+<header class="fixed top-0 inset-x-0 z-50 bg-neutral-950 border-b border-neutral-900">
 	<nav class="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
 
 		<a href="/" class="flex items-center gap-2 shrink-0">
@@ -18,7 +18,7 @@
 			<a href="/docs" class="text-sm text-neutral-500 hover:text-white transition-colors">Docs</a>
 		</div>
 
-		<div class="hidden md:flex items-center gap-3">
+		<div class="hidden md:flex items-center gap-4">
 			<a href="/login" class="text-sm text-neutral-500 hover:text-white transition-colors">Log in</a>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger class="group inline-flex items-center gap-1 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 px-4 py-1.5 rounded-full transition-colors">
@@ -35,12 +35,6 @@
 						onclick={() => window.location.href = '/register'}
 					>
 						Create account
-					</DropdownMenu.Item>
-					<DropdownMenu.Item
-						class="px-3 py-2 text-sm text-neutral-300 rounded-lg cursor-pointer hover:bg-neutral-800 hover:text-white transition-colors"
-						onclick={() => window.location.href = '/login'}
-					>
-						Log in
 					</DropdownMenu.Item>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
