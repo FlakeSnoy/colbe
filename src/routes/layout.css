@@ -1,20 +1,21 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+@import "shadcn-svelte/tailwind.css";
 @plugin "daisyui" {
-  themes: "light --default, dark --prefersdark";
+  themes: "dark --default";
 }
 
 @theme {
   --color-primary: #2563eb;
   --color-primary-content: #ffffff;
   --color-secondary: #0f172a;
-  --color-secondary-content: #f8fafc;
+  --color-secondary-content: #e2e8f0;
   --color-neutral: #111827;
-  --color-neutral-content: #f9fafb;
-  --color-base-100: #f8fafc;
-  --color-base-200: #e2e8f0;
-  --color-base-300: #cbd5e1;
-  --color-base-content: #0f172a;
+  --color-neutral-content: #e2e8f0;
+  --color-base-100: #0f151c;
+  --color-base-200: #040b13;
+  --color-base-300: #060d14;
+  --color-base-content: #e2e8f0;
 }
 
 html,
@@ -26,5 +27,5 @@ body {
   @apply bg-base-100 text-base-content antialiased;
   background-image:
     radial-gradient(circle at top, rgba(37, 99, 235, 0.14), transparent 36%),
-    linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(226, 232, 240, 1) 100%);
+    linear-gradient(180deg, rgba(15, 21, 28, 0.98) 0%, rgba(4, 11, 19, 1) 100%);
 }
