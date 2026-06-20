@@ -1,3 +1,13 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { Navbar, Hero, Features, Footer } from '$lib/index.js';
+</script>
+
+<svelte:head>
+	<title>Colbe</title>
+	<meta name="description" content="Chat with friends, call and explore more." />
+</svelte:head>
+
+<Navbar />
+<Hero />
+<Features />
+<Footer />

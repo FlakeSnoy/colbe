@@ -2,9 +2,47 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="text-scale" content="scale" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title>Colbe</title>
+		<meta name="description" content="Chat with friends, call and explore more." />
+		<meta name="keywords" content="chat, calls, messaging, communities, colbe, connect" />
+		<meta name="author" content="Colbe" />
+
+		<!-- Favicon -->
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
+
+		<!-- Open Graph -->
+		<meta property="og:site_name" content="Colbe" />
+		<meta property="og:title" content="Colbe" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://colbe.cc" />
+		<meta property="og:description" content="Chat with friends, call and explore more." />
+		<meta property="og:image" content="https://colbe.cc/og-image.png" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@colbeapp" />
+		<meta name="twitter:title" content="Colbe" />
+		<meta name="twitter:description" content="Chat with friends, call and explore more." />
+		<meta name="twitter:image" content="https://colbe.cc/og-image.png" />
+
+		<!-- Schema.org -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Colbe",
+			"url": "https://colbe.cc",
+			"email": "hello@colbe.cc",
+			"sameAs": [
+				"https://twitter.com/colbeapp"
+			]
+		}
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
