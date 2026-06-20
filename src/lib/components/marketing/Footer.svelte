@@ -1,13 +1,6 @@
 <script lang="ts">
 	const year = new Date().getFullYear();
 
-	const tabs = [
-		{ label: 'Home', href: '/home' },
-		{ label: 'Calls', href: '/calls' },
-		{ label: 'Updates', href: '/updates' },
-		{ label: 'Tools', href: '/tools' },
-	];
-
 	const links = [
 		{ label: 'About', href: '/about' },
 		{ label: 'Docs', href: '/docs' },
@@ -50,12 +43,13 @@
 			<p class="text-xs text-neutral-700">Copyright &copy; {year} — All rights reserved by Colbe</p>
 		</div>
 
-		<!-- Right: app tabs -->
+		<!-- Right: explore CTA -->
 		<div class="flex flex-col items-center md:items-end gap-3">
 			<p class="text-xs font-medium text-neutral-700 tracking-widest uppercase mb-1">Explore</p>
-			{#each tabs as tab}
-				<a href={tab.href} class="text-sm text-neutral-500 hover:text-white transition-colors">{tab.label}</a>
-			{/each}
+			<a href="/register" class="text-sm text-neutral-500 hover:text-white transition-colors">Create account</a>
+			<a href="/login" class="text-sm text-neutral-500 hover:text-white transition-colors">Log in</a>
+			<a href="/about" class="text-sm text-neutral-500 hover:text-white transition-colors">About Colbe</a>
+			<a href="/docs" class="text-sm text-neutral-500 hover:text-white transition-colors">Documentation</a>
 		</div>
 
 	</div>
