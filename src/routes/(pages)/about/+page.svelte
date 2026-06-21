@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-	<title>About — Colbe</title>
+	<title>About | Colbe</title>
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-950 px-6 py-24">
