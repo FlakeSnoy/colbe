@@ -4,6 +4,9 @@ import { username } from 'better-auth/plugins';
 import { env } from '$env/dynamic/private';
 import { db } from '$lib/server/db/index.js';
 import * as schema from '$lib/server/db/schema.js';
+import { normalizeOrigin } from '$lib/server/origin.js';
+
+const origin = normalizeOrigin(env.ORIGIN);
 
 export const auth = betterAuth({
 	database: drizzleAdapter(db, {
@@ -16,7 +19,7 @@ export const auth = betterAuth({
 		},
 	}),
 	secret: env.BETTER_AUTH_SECRET,
-	baseURL: env.ORIGIN,
+	baseURL: origin,
 	emailAndPassword: {
 		enabled: true,
 		minPasswordLength: 8,
@@ -32,5 +35,5 @@ export const auth = betterAuth({
 			maxAge: 60 * 5,
 		},
 	},
-	trustedOrigins: [env.ORIGIN ?? '', 'https://colbe.cc', 'https://www.colbe.cc'],
+		trustedOrigins: [origin, 'https://colbe.cc', 'https://www.colbe.cc'],
 });
