@@ -6,6 +6,8 @@ export * from './auth.schema.js';
 export const profile = sqliteTable('profile', {
 	id:          text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
 	userId:      text('user_id').notNull().unique(),
+	username:    text('username').unique(),
+	phone:       text('phone').unique(),
 	displayName: text('display_name'),
 	bio:         text('bio'),
 	avatar:      text('avatar'),
