@@ -23,7 +23,7 @@ export const actions: Actions = {
 				asResponse: true,
 			});
 		} else {
-			const identifier = email ?? phone ?? '';
+			const identifier = email ?? (phone ? `${phone}@colbe.local` : '');
 			result = await auth.api.signInEmail({
 				body: { email: identifier, password },
 				asResponse: true,
@@ -32,6 +32,14 @@ export const actions: Actions = {
 
 		if (!result.ok) {
 			return fail(400, { error: 'Invalid credentials. Please try again.' });
+		}
+
+		for (const cookie of result.headers.getSetCookie?.() ?? []) {
+			event.cookies.set(
+				cookie.split('=')[0],
+				cookie.split('=')[1]?.split(';')[0] ?? '',
+				{ path: '/', httpOnly: true, sameSite: 'lax', secure: true }
+			);
 		}
 
 		redirect(302, '/home');
