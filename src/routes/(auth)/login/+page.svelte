@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Tabs } from 'bits-ui';
 	import { Eye, EyeOff, Mail, Phone, User } from '@lucide/svelte';
-	import { authClient } from '$lib/auth-client';
+	import { authClient } from '$lib/auth-client.js';
 	import { goto } from '$app/navigation';
 
 	let showPassword = $state(false);
