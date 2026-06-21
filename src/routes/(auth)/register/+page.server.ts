@@ -16,12 +16,14 @@ export const actions: Actions = {
 		const password = data.get('password')?.toString() ?? '';
 
 		const identifier = email ?? phone ?? username ?? '';
+		const isEmail = !!email;
 
 		const result = await auth.api.signUpEmail({
 			body: {
-				email: identifier,
+				email: isEmail ? identifier : `${identifier}@colbe.local`,
 				password,
 				name: username ?? identifier.split('@')[0],
+				username: username,
 			},
 			asResponse: true,
 		});
@@ -30,6 +32,11 @@ export const actions: Actions = {
 			const body = await result.json().catch(() => ({}));
 			return fail(400, { error: body?.message ?? 'Registration failed. Please try again.' });
 		}
+
+		const headers = new Headers();
+		result.headers.forEach((value, key) => {
+			if (key.toLowerCase() === 'set-cookie') headers.append('set-cookie', value);
+		});
 
 		redirect(302, '/home');
 	},

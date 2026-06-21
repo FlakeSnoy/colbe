@@ -15,12 +15,20 @@ export const actions: Actions = {
 		const username = data.get('username')?.toString();
 		const password = data.get('password')?.toString() ?? '';
 
-		const identifier = email ?? phone ?? username ?? '';
+		let result: Response;
 
-		const result = await auth.api.signInEmail({
-			body: { email: identifier, password },
-			asResponse: true,
-		});
+		if (username) {
+			result = await auth.api.signInUsername({
+				body: { username, password },
+				asResponse: true,
+			});
+		} else {
+			const identifier = email ?? phone ?? '';
+			result = await auth.api.signInEmail({
+				body: { email: identifier, password },
+				asResponse: true,
+			});
+		}
 
 		if (!result.ok) {
 			return fail(400, { error: 'Invalid credentials. Please try again.' });
