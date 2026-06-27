@@ -51,23 +51,23 @@
 <div class="flex h-full flex-col overflow-hidden">
 	<!-- Header -->
 	<div class="flex items-center justify-between px-4 pt-4 pb-2">
-		<span class="text-xl font-bold tracking-tight">Chats</span>
+		<span class="text-lg font-semibold text-neutral-100">Chats</span>
 		<button
-			class="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+			class="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 transition-colors hover:bg-neutral-800 hover:text-neutral-100"
 			aria-label="New chat"
 		>
-			<PenSquare size={16} />
+			<PenSquare size={15} />
 		</button>
 	</div>
 
 	<!-- Search -->
 	<div class="px-3 pb-2">
-		<div class="flex h-9 items-center gap-2 rounded-lg bg-muted px-3">
-			<Search size={13} class="shrink-0 text-muted-foreground" />
+		<div class="flex h-8 items-center gap-2 rounded-lg bg-neutral-800 px-3">
+			<Search size={13} class="shrink-0 text-neutral-500" />
 			<input
 				type="text"
 				placeholder="Search"
-				class="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+				class="flex-1 bg-transparent text-sm text-neutral-100 outline-none placeholder:text-neutral-500"
 			/>
 		</div>
 	</div>
@@ -79,8 +79,8 @@
 				onclick={() => (filter = chip.key)}
 				class="rounded-full px-3 py-1 text-xs font-medium transition-colors
 					{filter === chip.key
-						? 'bg-primary text-primary-foreground'
-						: 'bg-muted text-muted-foreground hover:text-foreground'}"
+						? 'bg-blue-600 text-white'
+						: 'bg-neutral-800 text-neutral-500 hover:text-neutral-100'}"
 			>
 				{chip.label}
 			</button>
@@ -91,17 +91,17 @@
 	<div class="flex-1 overflow-y-auto">
 		{#if list.length === 0}
 			<div class="flex h-full flex-col items-center justify-center gap-3 text-center">
-				<div class="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
-					<MessageSquareOff size={20} class="text-muted-foreground" />
+				<div class="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800">
+					<MessageSquareOff size={18} class="text-neutral-500" />
 				</div>
-				<p class="text-sm text-muted-foreground">No chats yet.</p>
+				<p class="text-sm text-neutral-500">No chats yet.</p>
 			</div>
 		{:else}
 			{#each list as item (item.conv.id)}
 				{@const name = displayName(item)}
 				<a
 					href="/home/{item.conv.id}"
-					class="flex items-center gap-3 px-3 py-2.5 transition-colors hover:bg-muted"
+					class="flex items-center gap-3 px-3 py-2.5 transition-colors hover:bg-neutral-800"
 				>
 					<div class="relative shrink-0">
 						{#if item.otherProfile?.avatar ?? item.conv.avatar}
@@ -111,7 +111,7 @@
 								class="h-10 w-10 rounded-full object-cover"
 							/>
 						{:else}
-							<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-primary">
+							<div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600/20 text-sm font-semibold text-blue-400">
 								{initials(name)}
 							</div>
 						{/if}
@@ -119,12 +119,12 @@
 
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 						<div class="flex items-center justify-between">
-							<span class="truncate text-sm font-medium">{name}</span>
-							<span class="ml-2 shrink-0 text-[11px] text-muted-foreground">
+							<span class="truncate text-sm font-medium text-neutral-100">{name}</span>
+							<span class="ml-2 shrink-0 text-[11px] text-neutral-500">
 								{timeLabel(item.lastMessage?.createdAt ?? null)}
 							</span>
 						</div>
-						<span class="truncate text-xs text-muted-foreground">{previewText(item)}</span>
+						<span class="truncate text-xs text-neutral-500">{previewText(item)}</span>
 					</div>
 				</a>
 			{/each}

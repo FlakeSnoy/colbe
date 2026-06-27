@@ -24,15 +24,16 @@
 </script>
 
 <Tooltip.Provider delayDuration={300}>
-	<nav class="flex h-full flex-col items-center gap-1 py-2">
+	<nav class="flex h-full flex-col items-center py-3">
+
 		<!-- Logo -->
-		<div class="mb-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-lg transition-all hover:rounded-xl cursor-pointer">
-			C
-		</div>
+		<a href="/home" class="mb-2 flex h-10 w-10 items-center justify-center rounded-2xl hover:rounded-xl transition-all">
+			<img src="/favicon.svg" alt="Colbe" class="h-8 w-8" />
+		</a>
 
-		<div class="my-1 h-px w-8 bg-border"></div>
+		<div class="my-2 h-px w-8 bg-neutral-800"></div>
 
-		<!-- Tabs -->
+		<!-- Nav tabs -->
 		<div class="flex flex-1 flex-col items-center gap-1">
 			{#each tabs as tab}
 				<Tooltip.Root>
@@ -42,11 +43,11 @@
 							aria-label={tab.label}
 							class="relative flex h-10 w-10 items-center justify-center rounded-2xl transition-all
 								{active(tab.href)
-									? 'rounded-xl bg-primary text-primary-foreground'
-									: 'bg-muted text-muted-foreground hover:rounded-xl hover:bg-primary hover:text-primary-foreground'}"
+									? 'rounded-xl bg-blue-600 text-white'
+									: 'text-neutral-500 hover:rounded-xl hover:bg-neutral-800 hover:text-neutral-100'}"
 						>
 							{#if active(tab.href)}
-								<span class="absolute -left-2 h-5 w-1 rounded-r bg-foreground"></span>
+								<span class="absolute -left-3 h-5 w-1 rounded-r bg-white"></span>
 							{/if}
 
 							{#if tab.icon === 'chat'}
@@ -65,34 +66,38 @@
 							{/if}
 						</a>
 					</Tooltip.Trigger>
-					<Tooltip.Content side="right" class="rounded-md bg-popover px-2 py-1 text-xs text-popover-foreground shadow-md">
+					<Tooltip.Content side="right" class="rounded-md bg-neutral-800 px-2 py-1 text-xs text-neutral-100 shadow-lg">
 						{tab.label}
 					</Tooltip.Content>
 				</Tooltip.Root>
 			{/each}
 		</div>
 
-		<!-- Bottom -->
-		<div class="flex flex-col items-center gap-1">
-			<a
-				href="/settings"
-				aria-label="Settings"
-				class="flex h-10 w-10 items-center justify-center rounded-2xl bg-muted text-muted-foreground transition-all hover:rounded-xl hover:bg-primary hover:text-primary-foreground
-					{active('/settings') ? 'rounded-xl bg-primary text-primary-foreground' : ''}"
-			>
-				<Settings size={18} />
-			</a>
+		<!-- Bottom: settings + avatar -->
+		<div class="flex flex-col items-center gap-2 pb-1">
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					<a
+						href="/settings"
+						aria-label="Settings"
+						class="flex h-10 w-10 items-center justify-center rounded-2xl text-neutral-500 transition-all hover:rounded-xl hover:bg-neutral-800 hover:text-neutral-100
+							{active('/settings') ? 'rounded-xl bg-neutral-800 text-neutral-100' : ''}"
+					>
+						<Settings size={18} />
+					</a>
+				</Tooltip.Trigger>
+				<Tooltip.Content side="right" class="rounded-md bg-neutral-800 px-2 py-1 text-xs text-neutral-100 shadow-lg">
+					Settings
+				</Tooltip.Content>
+			</Tooltip.Root>
 
+			<!-- Profile avatar -->
 			<button
 				onclick={signOut}
-				aria-label="Sign out"
-				class="flex h-10 w-10 items-center justify-center rounded-2xl bg-muted text-muted-foreground transition-all hover:rounded-xl hover:bg-destructive hover:text-destructive-foreground"
+				aria-label="Account"
+				class="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white ring-2 ring-neutral-800 hover:ring-blue-500 transition-all"
 			>
-				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-					<polyline points="16 17 21 12 16 7"/>
-					<line x1="21" y1="12" x2="9" y2="12"/>
-				</svg>
+				A
 			</button>
 		</div>
 	</nav>
