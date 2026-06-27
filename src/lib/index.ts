@@ -10,3 +10,5 @@ export { default as UserAvatar } from './components/shared/UserAvatar.svelte';
 export { default as Logo } from './components/shared/Logo.svelte';
 export { default as ThemeToggle } from './components/shared/ThemeToggle.svelte';
 export { default as Modal } from './components/shared/Modal.svelte';
+export { default as Frame } from './components/design/Frame.svelte';
+export { default as ChatSidebar } from './components/chat/ChatSidebar.svelte';

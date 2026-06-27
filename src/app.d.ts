@@ -14,10 +14,16 @@ declare module 'lucide/svelte/icons/*' {
 
 declare global {
 	namespace App {
-		interface Locals { user?: User; session?: Session }
+		interface Locals {
+			user?: User;
+			session?: Session;
+		}
+
+		interface PageData {
+			conversations?: any[];
+		}
 
 		// interface Error {}
-		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
 	}
